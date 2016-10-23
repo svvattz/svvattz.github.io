@@ -1,0 +1,53 @@
+/* ==========================================================================
+   SOFIAladin-lite custom styles
+   ========================================================================= */
+body {
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+h5{
+  text-align:center;
+}
+
+.element {
+  .center-block();
+}
+
+.navbar{
+  z-index: 10101;
+}
+
+.jumbotron {
+ height: 610px;
+}
+
+#aladin-lite-div {
+  height: 500px
+}
+
+.panel {
+  z-index: 10100;
+  /*padding: 0;*/
+}
+
+.dataView {
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 0;
+}
+
+.data-panel, .table-panel {
+  background-color: #eeeeee;
+}
+
+.table-panel {
+  overflow-x: auto;
+  border-spacing: 0;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

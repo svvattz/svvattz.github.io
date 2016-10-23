@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SOFIAladin Lite</title>
+  <meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- STYESHEETS -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/vendor/bootstrap.css"> -->
+
+  <!-- DataTables -->
+  <!-- <link rel="https://"> -->
+  <!-- <link rel="https://"> -->
+  <link rel="stylesheet" href="css/vendor/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="css/vendor/jquery.dataTables.css">
+
+  <!-- Aladin Lite -->
+  <!-- <link rel="https://"> -->
+  <link rel="stylesheet" href="css/vendor/aladin.min.css">
+
+  <!-- Author's styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/upload-file.css"> -->
+
+  <!-- SCRIPTS -->
+  <!--  -->
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+  <!-- JQuery (needs to load in the header for aladin-lite-div) -->
+  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+  </script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/vendor/bootstrap.min.js"><\/script>')
+  </script>
+
+  <!-- Datatables -->
+  <script src="js/vendor/jquery.dataTables.min.js"></script>
+  <script src="js/vendor/dataTables.bootstrap.js"></script>
+
+  <!-- Aladin Lite -->
+  <script src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
+  <!-- <script src="js/vendor/aladin.min.js" charset="utf-8"></script> -->
+
+  <!-- Author's script -->
+  <script src="js/app.js" charset="utf-8"></script>
+  <!--<script src="js/upload-file.js" charset="utf-8"></script>-->
+</head>
+<body>
+  <!--  -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Track Report Viewer</a>
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="inactive"><a href="../BatchViewer/index.html">Batch Viewer</a></li>
+          <li class="active"><a href="#">SOFIAladin-Lite Viewer</a></li>
+          <li id="dropdown-file" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">File<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+              <!--<li><a class="fileupload fileupload-new" data-provides="fileupload" href="#">Action</a></li>-->
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                  <span class="btn btn-primary btn-file"><span class="fileupload-new">Select file</span>
+                  <span class="fileupload-exists">Change</span><input type="file" /></span>
+                  <span class="fileupload-preview"></span>
+                  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                </div>
+              </li>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="name/designator" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="position" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </div> <!-- /navbar-fixed-top -->
+
+  <!-- Main jumbotron -->
+  <div class="jumbotron" style="background:transparent !important" >
+    <div class="container-fluid">
+      <div class="jumbotron-panel panel panel-primary" style="background-color:#eeeeee;">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xl-10 col-lg-9 col-md-8 col-sm-7 col-xs-12">
+              <div id="aladin-lite-div"></div>
+            </div>
+
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
+              <div class="control-panel panel panel-default center-block">
+                <div class="panel-body">
+                  <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group btn-group-vertical">
+                      <h5>LAYERS</h5>
+                      <button type="button" class="btn btn-selected">hip2</button>
+                      <button type="button" class="btn btn-default">ucac4</button>
+                      <button type="button" class="btn btn-default">tycho-2</button>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- /control-panel -->
+            </div>
+          </div> <!-- /row -->
+        </div>
+      </div> <!-- /panel -->
+    </div>
+  </div> <!-- /jumbotron -->
+
+  <!--  -->
+  <div class="dataView">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+        <!--<div class="data-panel panel panel-primary">-->
+        <!--<div class="panel-heading">-->
+        <!--  <h3 class="panel-title">Selected Objects</h3>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+          <div class="table-panel panel panel-primary">
+            <div class="panel-body">
+              <table id="selectedObjectsTable" class="data-table table display table-striped table-hover table-nowrap">
+                <thead>
+                  <tr><th>_SkySep</th><th>_RAJ2000</th><th>_DEJ2000</th><th>_V</th><th>HIP</th><th>n_HIP</th><th>Sn</th><th>So</th><th>RArad</th><th>DErad</th><th>Plx</th><th>e_Plx</th><th>pmRA</th><th>pmDE</th><th>Hpmag</th><th>B-V</th><th>HIP1</th><th>recno</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                  <tr><td>0.6998428931506637</td><td>267.359157</td><td>-29.438651</td><td>VizieR</td><td>87233</td><td> </td><td>5</td><td>0</td><td>267.35913386</td><td>-29.43857653</td><td>6.71</td><td>1.33</td><td>8.20</td><td>-30.82</td><td>8.4047</td><td>0.366</td><td>HIP1</td><td>86944</td></tr>
+                  <tr><td>0.5758464057841864</td><td>267.368301</td><td>-29.314774</td><td>VizieR</td><td>87238</td><td> </td><td>5</td><td>0</td><td>267.36818055</td><td>-29.31473525</td><td>10.42</td><td>1.10</td><td>43.32</td><td>-16.04</td><td>8.1086</td><td>0.325</td><td>HIP1</td><td>86949</td></tr>
+                  <tr><td>0.6537631534434627</td><td>268.045036</td><td>-28.451135</td><td>VizieR</td><td>87455</td><td> </td><td>5</td><td>0</td><td>268.04503241</td><td>-28.45112928</td><td>0.51</td><td>1.22</td><td>1.46</td><td>-2.16</td><td>8.5378</td><td>1.875</td><td>HIP1</td><td>87165</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+	      <!--</div>-->
+	      <!--</div>-->
+       <!-- </div>-->
+        </div>
+      </div>
+    </div>
+  </div> <!-- /dataView -->
+
+  <!--  -->
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+    <footer>
+    </footer>
+  </div> <!-- /container -->
+</body>
+</html>
