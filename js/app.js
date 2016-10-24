@@ -125,7 +125,7 @@ $(document).ready(function() {
     showFullscreenControl: true,
     showFrame: true,
     //target: 'M 45',
-    //fov: 5,
+    fov: 180,
   });
 
   // A click event listener for the "Go" button which centers Aladin's FOV on the sky position entered in the text field #txt-coordinates
