@@ -9,27 +9,27 @@
   <!-- STYESHEETS -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="css/vendor/bootstrap.css"> -->
+  <!--<link rel="stylesheet" href="css/vendor/bootstrap.css">-->
 
   <!-- DataTables -->
-  <!-- <link rel="https://"> -->
-  <!-- <link rel="https://"> -->
-  <link rel="stylesheet" href="css/vendor/dataTables.bootstrap.css">
-  <link rel="stylesheet" href="css/vendor/jquery.dataTables.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+  <!--<link rel="stylesheet" href="css/vendor/jquery.dataTables.css">-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+  <!--<link rel="stylesheet" href="css/vendor/dataTables.bootstrap.css">-->
 
   <!-- Aladin Lite -->
-  <!--<link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />-->
+  <!--<link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css">-->
   <link rel="stylesheet" href="css/vendor/aladin.min.css">
 
   <!-- Author's styles -->
   <link rel="stylesheet" href="css/main.css">
-  <!-- <link rel="stylesheet" href="css/upload-file.css"> -->
+  <link rel="stylesheet" href="css/upload-file.css">
 
   <!-- SCRIPTS -->
   <!--  -->
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
-  <!-- JQuery (needs to load in the header for aladin-lite-div) -->
+  <!-- JQuery (needs to load in the header for aladin-lite-div to work) -->
   <script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
@@ -42,21 +42,21 @@
   </script>
 
   <!-- Datatables -->
-  <script src="js/vendor/jquery.dataTables.min.js"></script>
-  <script src="js/vendor/dataTables.bootstrap.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script>
+    jQuery.fn.dataTable || document.write('<script src="js/vendor/jquery.dataTables.min.js"><\/script>')
+  </script>
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <!--<script src="js/vendor/dataTables.bootstrap.js"></script>-->
 
   <!-- Aladin Lite -->
-  <!-- This doesn't work on github pages because it isn't https -->
-  <script src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
-  <script>
-    (A.aladin) || document.write('<script src="js/vendor/aladin.min.js" charset="utf-8"><\/script>')
+  <!--<script src="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>-->
+  <script src="js/vendor/aladin.min.js" charset="utf-8"><\/script>')
   </script>
-<!--  <script src="js/vendor/aladin.min.js" charset="utf-8"></script>-->
-
 
   <!-- Author's script -->
   <script src="js/app.js" charset="utf-8"></script>
-  <!--<script src="js/upload-file.js" charset="utf-8"></script>-->
+  <script src="js/upload-file.js" charset="utf-8"></script>
 </head>
 <body>
   <!--  -->
