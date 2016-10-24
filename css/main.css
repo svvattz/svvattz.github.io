@@ -22,6 +22,10 @@ h5{
  height: 610px;
 }
 
+#txt-coordinates {
+  width: 260px;
+}
+
 #aladin-lite-div {
   height: 500px
 }

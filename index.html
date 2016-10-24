@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SOFIAladin Lite</title>
+  <title>Observation Prep with Aladin Lite</title>
   <meta name="description" content="">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="css/vendor/jquery.dataTables.css">
 
   <!-- Aladin Lite -->
-  <!-- <link rel="https://"> -->
-  <link rel="stylesheet" href="css/vendor/aladin.min.css">
+  <link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
+  <!-- <link rel="stylesheet" href="css/vendor/aladin.min.css"> -->
 
   <!-- Author's styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -63,13 +63,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Track Report Viewer</a>
+        <!-- <a class="navbar-brand" href="#">Obs Prep</a> -->
       </div>
 
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="inactive"><a href="../BatchViewer/index.html">Batch Viewer</a></li>
-          <li class="active"><a href="#">SOFIAladin-Lite Viewer</a></li>
+          <!-- <li class="inactive"><a href="../BatchViewer/index.html">Batch Viewer</a></li> -->
+          <!-- <li class="active"><a href="#">Aladin Lite Viewer</a></li> -->
           <li id="dropdown-file" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">File<b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -78,6 +78,15 @@
                 <div class="fileupload fileupload-new" data-provides="fileupload">
                   <span class="btn btn-primary btn-file"><span class="fileupload-new">Select file</span>
                   <span class="fileupload-exists">Change</span><input type="file" /></span>
+                  <span class="fileupload-preview"></span>
+                  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                </div>
+              </li>
+              <li>
+              <!--<li><a class="fileupload fileupload-new" data-provides="fileupload" href="#">Action</a></li>-->
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                  <span class="btn btn-primary btn-file"><span class="fileupload-new">Import SOFIA .mis file</span>
+                  <span class="fileupload-exists"></span><input type="file" /></span>
                   <span class="fileupload-preview"></span>
                   <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
                 </div>
@@ -93,13 +102,13 @@
           </li>
         </ul>
           <form class="navbar-form navbar-right">
+<!--            <div class="form-group">
+              <input type="text" placeholder="name/designator" class="form-control" id="txt-designator">
+            </div>-->
             <div class="form-group">
-              <input type="text" placeholder="name/designator" class="form-control">
+              <input type="text" placeholder="RA Dec Coordinates" class="form-control" id="txt-coordinates">
             </div>
-            <div class="form-group">
-              <input type="text" placeholder="position" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" id="btn-go">Go</button>
           </form>
       </div><!--/.navbar-collapse -->
     </div>
