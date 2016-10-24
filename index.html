@@ -9,7 +9,7 @@
   <!-- STYESHEETS -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!--<link rel="stylesheet" href="css/vendor/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="css/vendor/bootstrap-3.3.7.min.css">-->
 
   <!-- DataTables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
@@ -18,8 +18,8 @@
   <!--<link rel="stylesheet" href="css/vendor/dataTables.bootstrap.min.css">-->
 
   <!-- Aladin Lite -->
-  <!--<link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css">-->
-  <link rel="stylesheet" href="css/vendor/aladin.min.css">
+  <link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css">
+  <!--<link rel="stylesheet" href="css/vendor/aladin.min.css">-->
 
   <!-- Author's styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -27,18 +27,21 @@
 
   <!-- SCRIPTS -->
   <!--  -->
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type='text/javascript'>
+    window.Modernizr || document.write('<script src="js/vendor/modernizr-2.8.3.min.js"><\/script>')
+  </script>
 
   <!-- JQuery (needs to load in the header for aladin-lite-div to work) -->
-  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')
   </script>
 
   <!-- Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
-    window.jQuery.fn.modal || document.write('<script src="js/vendor/bootstrap.min.js"><\/script>')
+    window.jQuery.fn.modal || document.write('<script src="js/vendor/bootstrap-3.3.7.min.js"><\/script>')
   </script>
 
   <!-- Datatables -->
@@ -50,8 +53,8 @@
   <!--<script src="js/vendor/dataTables.bootstrap.js"></script>-->
 
   <!-- Aladin Lite -->
-  <!--<script src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>-->
-  <script src="js/vendor/aladin.min.js" charset="utf-8"></script>
+  <script src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
+  <!--<script src="js/vendor/aladin.min.js" charset="utf-8"></script>-->
   </script>
 
   <!-- Author's script -->
